@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy text on clipboard</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="myTextBox" placeholder="Enter text here">
+        <button onclick="displayText()">copy to clipboard</button>
+      </div>
+    
+      <p id="output"></p>
+
+      <script>
+        function displayText(){
+        let text = document.getElementById('myTextBox') ;
+        text.select();
+        text.setSelectionRange(0, 9999);
+
+        navigator.clipboard.writeText(text.value);
+
+        window.alert('text copied successfully');
+      }
+
+      </script>
+
+</body>
+</html>
+
+
